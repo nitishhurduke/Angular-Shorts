@@ -1,0 +1,9 @@
+<form [formGroup]="addProduct" (ngSubmit)="addNewProduct()">
+    <select formControlName="category" [value]="selectedCategory">
+        <option selected>{{defaultCategory}} </option>
+        <option *ngFor="let categoty of categories" >
+            {{categoty}}
+        </option>
+    </select>
+    <input type="submit" value="Add Product">
+</form>

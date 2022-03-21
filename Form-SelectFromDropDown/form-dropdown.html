@@ -1,0 +1,12 @@
+ <div class="row">
+                    <div class="form-group col md-6">
+                        <!-- <input  class="form-control" formControlName="category" type="" placeholder="Category"> -->
+                        <label for="">Category</label>
+                        <select class="custom-select custom-select-md mb-3" formControlName="category">
+                            <option selected>{{defaultCategory}}</option>
+                            <option *ngFor="let category of categories" [value]="category">
+                                {{category}}
+                            </option>
+                        </select>
+                    </div>
+ </div>
