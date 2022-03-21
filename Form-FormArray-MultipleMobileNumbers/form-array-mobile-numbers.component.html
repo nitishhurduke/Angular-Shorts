@@ -1,0 +1,26 @@
+<form [formGroup]="addPerson">
+
+    Name: 
+    <input type="text" formControlName="name"> <br>
+
+    <div formArrayName = "mobiles" >
+        <div *ngFor="let mobile of mobiles.controls; let i= index">
+
+          <div [formGroupName] = "i">
+              Mobile Number : <input type="text" formControlName = "mobile"> 
+              <span *ngIf="i == 0">
+                <button (click)="addNewMobileNo()">Add Another Mobile Number</button>
+              </span>
+              <span *ngIf="i != 0">
+                  <button (click)="removeMobile(i)">Remove</button>
+              </span>
+          </div>
+
+        </div>
+        
+    </div>
+    
+    <button type="submit" (click)="submit()">Submit</button>
+</form>
+
+{{this.addPerson.value | json}}
