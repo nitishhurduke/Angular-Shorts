@@ -1,0 +1,13 @@
+<form [formGroup]="addProduct">
+
+    <label>Payment Modes:</label>
+    <span *ngFor="let mode of pay_modes">
+        <label>
+            <input type="checkbox" [value]="mode.id" (change)="onCheckboxChange($event)">
+        </label>
+        {{mode.mode}}
+    </span>
+
+    <button (click)="submit()">Submit</button>
+</form>
+{{this.addProduct.value |json}}
